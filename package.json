@@ -1,0 +1,21 @@
+{
+  "name": "ToDo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "BuildTools <unconfigured@null.spigotmc.org>",
+  "license": "MIT",
+  "scripts": {
+    "build": "steal-tools"
+  },
+  "system": {
+   "main": "index",
+   "directories": {
+     "lib": "src"
+   },
+   "npmAlgorithm": "flat"
+ },
+  "devDependencies": {
+    "steal": "^1.0.4",
+    "steal-tools": "^1.0.1"
+  }
+}
