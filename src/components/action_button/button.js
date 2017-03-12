@@ -42,11 +42,12 @@ doc.addEventListener("DOMContentLoaded", ()=>{
     doc.querySelector("#add-button").addEventListener(click,()=>{
       const toDo = doc.createElement("li");
       const deleteToDo = doc.createElement("button");
-
+      if(toDoInput.value !== ""){
       setToDoWords(toDo);
       addDeleteTodoListener(deleteToDo, toDo);
       buildToDoNode(toDo,deleteToDo);
       clearInput();
+      };
     });
 
     doc.querySelector("form").addEventListener("submit", event=>{
