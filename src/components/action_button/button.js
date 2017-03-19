@@ -42,6 +42,7 @@ doc.addEventListener("DOMContentLoaded", ()=>{
     doc.querySelector("#add-button").addEventListener(click,()=>{
       const toDo = doc.createElement("li");
       const deleteToDo = doc.createElement("button");
+      deleteToDo.setAttribute("type", "button");
       if(toDoInput.value !== ""){
       setToDoWords(toDo);
       addDeleteTodoListener(deleteToDo, toDo);
@@ -60,8 +61,11 @@ doc.addEventListener("DOMContentLoaded", ()=>{
     doc.querySelector("#todo-list").addEventListener(click, event=>{
       const todo = event.target;
       const isTodoChecked = todo.className;
-      todo.className = isTodoChecked  // is this value truthy?
-        ? ""  //returns if truth
-        : "checked"; // returns if falsy
+      // the key is the element's tag name
+      if(todo.tagName.toLowerCase() === "span"){
+        todo.className = isTodoChecked  // is this value truthy?
+          ? ""  //returns if truth
+          : "checked"; // returns if falsy
+      }
     });
 });
